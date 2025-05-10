@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <button id="toggleSidebar" class="toggle-btn"><i class="fas fa-bars"></i></button>
+
+
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Dashboard</h2>
+      <nav>
+        <ul>
+          <li><i class="fas fa-chart-line"></i> Overview</li>
+          <li><i class="fas fa-user"></i> Users</li>
+          <li><i class="fas fa-dollar-sign"></i> Sales</li>
+          <li><i class="fas fa-bell"></i> Notifications</li>
+        </ul>
+      </nav>
+      <div class="theme-picker">
+        <label for="themeColor">Theme</label>
+        <input type="color" id="themeColor" />
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header>
+        <h1>Admin Dashboard</h1>
+        <p>Welcome back, Admin!</p>
+      </header>
+
+      <section class="dashboard">
+        <div class="card counter-card">
+          <h3>Users</h3>
+          <p class="count" data-target="1204">0</p>
+        </div>
+        <div class="card counter-card">
+          <h3>Revenue</h3>
+          <p class="count" data-target="9456">0</p>
+        </div>
+        <div class="card counter-card">
+          <h3>Messages</h3>
+          <p class="count" data-target="87">0</p>
+        </div>
+      </section>
+
+      <section class="chart-section">
+        <h2>Monthly Revenue</h2>
+        <canvas id="revenueChart" width="400" height="200"></canvas>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

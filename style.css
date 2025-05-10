@@ -1,0 +1,144 @@
+:root {
+    --primary-color: #3498db;
+    --sidebar-bg: #2c3e50;
+    --text-light: #ecf0f1;
+    --card-bg: #ffffff;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+    transition: background 0.3s ease;
+  }
+  
+  .container {
+    display: flex;
+  }
+
+
+.sidebar.collapsed {
+  width: 0; /* Corrected from 'o' to '0' */
+  overflow: hidden;
+  padding: 0; /* Ensure no padding remains */
+  transition: width 0.3s ease; /* Smooth transition */
+}
+
+.sidebar.collapsed h2,
+.sidebar.collapsed nav li span,
+.sidebar.collapsed .theme-picker {
+  display: none; /* Hide child elements */
+}
+  
+  .sidebar {
+    width: 250px;
+    background: var(--sidebar-bg);
+    color: var(--text-light);
+    min-height: 100vh;
+    padding: 1rem;
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar nav li {
+    margin: 1rem 0;
+    cursor: pointer;
+  }
+  
+  .sidebar nav li i {
+    margin-right: 0.5rem;
+  }
+  
+  .theme-picker {
+    margin-top: 2rem;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  header h1 {
+    margin: 0;
+    color: var(--primary-color);
+  }
+  
+  .dashboard {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 200px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .counter-card p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0.5rem 0 0 0;
+  }
+  
+  /* Chart section */
+  .chart-section {
+    margin-top: 3rem;
+  }
+  
+  /* Toggle Button */
+  .toggle-btn {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Collapsed Sidebar */
+  .sidebar.collapsed {
+    width: 60px;
+  }
+  
+  .sidebar.collapsed h2,
+  .sidebar.collapsed nav li span,
+  .sidebar.collapsed .theme-picker {
+    display: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .dashboard {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      position: absolute;
+      z-index: 999;
+      height: 100vh;
+    }
+  }
+  
